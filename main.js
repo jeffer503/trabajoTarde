@@ -39,11 +39,15 @@ function mostrarProductosDeCategoria(categoria) {
       const producto = productos[i];
       total++;
       contenedor.innerHTML += `
-        <div class="card">
-          <img src="https://via.placeholder.com/200x150?text=${encodeURIComponent(producto.nombre)}" alt="${producto.nombre}">
-          <h3>${producto.nombre}</h3>
-          <p><strong>Categoría:</strong> ${producto.categoria}</p>
-          <p><strong>Precio:</strong> $${producto.precio}</p>
+        <div class="rounded-2xl bg-white p-6 shadow-md">
+          <img
+            src="https://via.placeholder.com/200x150?text=${encodeURIComponent(producto.nombre)}"
+            alt="Nombre producto"
+            class="mb-4 h-48 w-full rounded-lg object-cover"
+          />
+          <h2 class="mb-2 text-xl font-semibold">${producto.nombre}</h2>
+          <p class="mb-1 text-gray-700">$${producto.precio}</p>
+          <span class="rounded-full bg-blue-100 px-2 py-1 text-sm text-blue-800">${producto.categoria}</span>
         </div>
       `;
     }
