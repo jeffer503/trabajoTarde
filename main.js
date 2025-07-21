@@ -24,6 +24,35 @@ const productos = [
   { nombre: "Cinta métrica", categoria: "Ferretería", precio: 25 },
 ];
 
+ // Imagenes 
+function obtenerImagen(nombreProducto) {
+  if (nombreProducto.includes("Laptop")) return "https://p2-ofp.static.pub//fes/cms/2024/07/17/109vq5fdalv01w5jsu6vh35ncnk5jn890135.png";
+  if (nombreProducto.includes("Celular")) return "https://images.samsung.com/is/image/samsung/assets/co/support/hhp/activarpaneledge1.png?$ORIGIN_PNG$";
+  if (nombreProducto.includes("Auriculares")) return "https://www.jbl.com.pe/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwa560efe3/JBL_Tune_770NC_Box%20Image_Side_Black_SKU_1605x1605.png?sw=537&sfrm=png";
+  if (nombreProducto.includes("Mouse")) return "https://cdn.memorykings.pe/files/2024/12/18/351469-MK038314-D.jpg";
+  if (nombreProducto.includes("Teclado")) return "https://hca.pe/storage/media/large_dA3As37ZiiLI7wRSA6m9uKL3wtoaCiIku9aQKgth.png";
+
+  if (nombreProducto.includes("Sofá")) return "";
+  if (nombreProducto.includes("Mesa")) return "";
+  if (nombreProducto.includes("Lámpara")) return "";
+  if (nombreProducto.includes("Alfombra")) return "";
+  if (nombreProducto.includes("Silla")) return "";
+
+  if (nombreProducto.includes("Remera")) return "";
+  if (nombreProducto.includes("Pantalón")) return "";
+  if (nombreProducto.includes("Campera")) return "";
+  if (nombreProducto.includes("Zapatillas")) return "";
+  if (nombreProducto.includes("Gorra")) return "";
+
+  if (nombreProducto.includes("Martillo")) return "";
+  if (nombreProducto.includes("Taladro")) return "";
+  if (nombreProducto.includes("Caja")) return "";
+  if (nombreProducto.includes("Destornillador")) return "";
+  if (nombreProducto.includes("Cinta")) return "";
+
+  return "img/default.jpg";
+}
+
 // Selección de elementos
 const contenedor = document.getElementById("contenedor-productos");
 const totalTexto = document.getElementById("total-productos");
@@ -41,8 +70,8 @@ function mostrarProductosDeCategoria(categoria) {
       contenedor.innerHTML += `
         <div class="rounded-2xl bg-white p-6 shadow-md">
           <img
-            src="https://via.placeholder.com/200x150?text=${encodeURIComponent(producto.nombre)}"
-            alt="Nombre producto"
+            src="${obtenerImagen(producto.nombre)}"
+            alt="${producto.nombre}
             class="mb-4 h-48 w-full rounded-lg object-cover"
           />
           <h2 class="mb-2 text-xl font-semibold">${producto.nombre}</h2>
